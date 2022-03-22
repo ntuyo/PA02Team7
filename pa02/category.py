@@ -8,8 +8,6 @@ to Python Dictionaries.
 This app will store the data in a SQLite database ~/tracker.db
 
 '''
-
-# this is nazari
 import sqlite3
 
 def to_cat_dict(cat_tuple):
