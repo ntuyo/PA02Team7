@@ -9,14 +9,14 @@ def to_transaction_dict(trans_tuple):
 
 def to_transaction_dict_list(trans_tuples):
     ''' convert a list of transaction tuples into a list of dictionaries'''
-    return [to_transaction_dict(cat) for cat in trans_tuples]
+    return [to_transaction_dict(trans) for trans in trans_tuples]
 
 class Transaction():
     def __init__(self,dbfile):
-        con= sqlite3.connect(dbfile)
+        con = sqlite3.connect(dbfile)
         cur = con.cursor()
-        cur.execute('''CREATE TABLE IF NOT EXISTS transaction
-                    (name text, desc text)''')
+        cur.execute('''CREATE TABLE IF NOT EXISTS transactions 
+                    ('item #' int, amount int, category text, date Date, description text)''')
         con.commit()
         con.close()
         self.dbfile = dbfile
@@ -43,7 +43,18 @@ class Transaction():
 
     # Gabby
     def add_transaction(self):
-        return
+        ''' add a transaction to the transaction table.
+            this returns the rowid of the inserted element
+        '''
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("INSERT INTO transaction VALUES(?,?)",(item['amount'],item['date'],item['description']))
+        con.commit()
+        cur.execute("SELECT last_insert_rowid()")
+        last_rowid = cur.fetchone()
+        con.commit()
+        con.close()
+        return last_rowid[0]
 
     # Jimkelly
     def delete_transaction(self):
@@ -51,7 +62,18 @@ class Transaction():
 
     # Nazari
     def summarize_transaction_by_date(self):
-        return
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT * from transactions GROUP BY date")
+        # cur.execute('''SELECT
+        #             date AS date,
+        #             EXTRACT(date FROM transaction_date) AS Date,
+        #             SUM(money) OVER(PARTITION BY EXTRACT(year FROM transaction_date)) AS money_earned
+        #             FROM data''')
+        rows = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(rows)
 
     # Gabby
     def summarize_transaction_by_month(self):
@@ -63,7 +85,13 @@ class Transaction():
 
     # Nazari
     def summarize_transaction_by_category(self):
-        return
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT 'item #',* from transactions groupby category")
+        rows = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(rows)
 
     # Tiffany
     def print_this_menu(self):

@@ -33,11 +33,11 @@ could be replaced with PostgreSQL or Pandas or straight python lists
 
 #from transactions import Transaction
 from category import Category
+from transaction import Transaction
 import sys
 
-#transactions = Transaction('tracker.db')
+transactions = Transaction('tracker.db')
 category = Category('tracker.db')
-
 
 # here is the menu for the tracker app
 
@@ -78,6 +78,30 @@ def process_choice(choice):
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
+    elif choice == '4':
+        print('')
+        print(transactions.show_transaction())
+    elif choice == '5':
+        print('')
+        print(transactions.add_transaction())
+    elif choice == '6':
+        print('summarizing by date')
+        print(transactions.delete_transaction())
+    elif choice == '7':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_date())
+    elif choice == '8':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_month())
+    elif choice == '9':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_year())
+    elif choice == '10':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_category())
+    elif choice == '11':
+        print('summarizing by date')
+        print(transactions.print_this_menu())
     else:
         print("choice",choice,"not yet implemented")
 
