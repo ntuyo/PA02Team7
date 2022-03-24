@@ -33,11 +33,11 @@ could be replaced with PostgreSQL or Pandas or straight python lists
 
 #from transactions import Transaction
 from category import Category
+from transaction import Transaction
 import sys
 
-#transactions = Transaction('tracker.db')
+transactions = Transaction('tracker.db')
 category = Category('tracker.db')
-
 
 # here is the menu for the tracker app
 
@@ -78,6 +78,40 @@ def process_choice(choice):
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
+
+    elif choice == '4':
+        print('')
+        print(transactions.show_transaction())
+    elif choice == '5':
+        itemnum = int(input(" transaction item number: "))
+        amount = input(" transaction amount: ")
+        trancat = input(" transaction category: ")
+        date = input(" transaction date: ")
+        trandesc = input("category description: ")
+        transaction = {'item #':itemnum, 'amount':amount, 'category':trancat, 'date':date, 'description':trandesc}
+        transactions.add_transaction(transaction)
+   
+    elif choice=='6':
+        transID = int(input("TransID: "))
+        transactions.delete_transaction(transID)
+    elif choice == '7':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_date())
+    elif choice == '8':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_month())
+    elif choice=='9':
+        print("summarize transactions by year")
+        yearID = int(input("YearID: "))
+        transactions.summererise_transaction_by_year(yearID)
+    elif choice == '10':
+        print('summarizing by date')
+        print(transactions.summarize_transaction_by_category())
+    elif choice == '11':
+        print('summarizing by date')
+        print(transactions.print_this_menu())
+
+
     else:
         print("choice",choice,"not yet implemented")
 
