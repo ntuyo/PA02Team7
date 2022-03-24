@@ -83,7 +83,7 @@ def process_choice(choice):
         print('')
         print(transactions.show_transaction())
     elif choice == '5':
-        itemnum = input(" transaction item number: ")
+        itemnum = int(input(" transaction item number: "))
         amount = input(" transaction amount: ")
         trancat = input(" transaction category: ")
         date = input(" transaction date: ")
@@ -92,9 +92,8 @@ def process_choice(choice):
         transactions.add_transaction(transaction)
    
     elif choice=='6':
-        print("Delete Transaction")
         transID = int(input("TransID: "))
-        transactions.delete(transID)
+        transactions.delete_transaction(transID)
     elif choice == '7':
         print('summarizing by date')
         print(transactions.summarize_transaction_by_date())

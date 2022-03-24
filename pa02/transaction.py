@@ -67,11 +67,15 @@ class Transaction():
        
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute(cur.execute('''DELETE FROM categories WHERE tranID=(?);''',(tranID,)))
-        # this things in the parenthesis is the actual sql code that deletes the transaction based on the ID
-        # the code should go into the data base and based on the trans ID delete the whole row( each row is one transaction)
+        cur.execute("DELETE FROM transactions WHERE 'item #'=(?)",(tranID,))
         con.commit()
         con.close()
+        #cur.execute('''DELETE FROM categories WHERE rowid=(?); ''',(rowid,))
+        
+
+        # this things in the parenthesis is the actual sql code that deletes the transaction based on the ID
+        # the code should go into the data base and based on the trans ID delete the whole row( each row is one transaction)
+        
 
     # Nazari
     def summarize_transaction_by_date(self):
