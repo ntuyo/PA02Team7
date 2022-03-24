@@ -15,8 +15,10 @@ class Transaction():
     def __init__(self,dbfile):
         con = sqlite3.connect(dbfile)
         cur = con.cursor()
+
         cur.execute('''CREATE TABLE IF NOT EXISTS transactions 
                     ('item #' int, amount int, category text, date Date, description text)''')
+
         con.commit()
         con.close()
         self.dbfile = dbfile
@@ -25,7 +27,7 @@ class Transaction():
     def quit(self):
         return
 
-    #Jimkelly
+    #Jimkelly Done already
     def show_categories(self):
         return
 
@@ -42,13 +44,14 @@ class Transaction():
         return
 
     # Gabby
-    def add_transaction(self):
+    def add_transaction(self,item):
         ''' add a transaction to the transaction table.
             this returns the rowid of the inserted element
         '''
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("INSERT INTO transaction VALUES(?,?)",(item['amount'],item['date'],item['description']))
+        #cur.execute("INSERT INTO categories VALUES(?,?)",(item['name'],item['desc']))
+        cur.execute("INSERT INTO transactions VALUES(?,?,?,?,?)",(item['item #'],item['amount'],item['category'],item['date'],item['description']))
         con.commit()
         cur.execute("SELECT last_insert_rowid()")
         last_rowid = cur.fetchone()
@@ -57,8 +60,18 @@ class Transaction():
         return last_rowid[0]
 
     # Jimkelly
-    def delete_transaction(self):
-        return
+    def delete_transaction(self,tranID):
+
+        # go to the sql table based on the transaction ID 
+        # find transID and remove ot from the SQL table 
+       
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute(cur.execute('''DELETE FROM categories WHERE tranID=(?);''',(tranID,)))
+        # this things in the parenthesis is the actual sql code that deletes the transaction based on the ID
+        # the code should go into the data base and based on the trans ID delete the whole row( each row is one transaction)
+        con.commit()
+        con.close()
 
     # Nazari
     def summarize_transaction_by_date(self):
@@ -80,8 +93,22 @@ class Transaction():
         return
 
     # Jimkelly
-    def summererise_transaction_by_year(self):
-        return
+    def summererise_transaction_by_year(self,yearID):
+
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT * from transactions GROUP BY date")
+        # cur.execute('''SELECT
+        #             date AS date,
+        #             EXTRACT(date FROM transaction_date) AS Date,
+        #             SUM(money) OVER(PARTITION BY EXTRACT(year FROM transaction_date)) AS money_earned
+        #             FROM data''')
+        rows = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(rows)
+        
+    
 
     # Nazari
     def summarize_transaction_by_category(self):
