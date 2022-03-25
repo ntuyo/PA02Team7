@@ -17,11 +17,22 @@ class Transaction():
         cur = con.cursor()
 
         cur.execute('''CREATE TABLE IF NOT EXISTS transactions 
-                    ('item #' int, amount int, category text, date Date, description text)''')
+                    (amount int, category text, date Date, description text)''')
 
         con.commit()
         con.close()
         self.dbfile = dbfile
+
+
+    def transaction_select_all(self):
+        ''' return all of the transactions as a list of dicts.'''
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT rowid,* from transactions")
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(tuples)
 
     # Gabby
     def quit(self):
@@ -41,6 +52,7 @@ class Transaction():
 
     # Tiffany
     def show_transaction(self):
+        
         return
 
     # Gabby
@@ -51,7 +63,7 @@ class Transaction():
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
         #cur.execute("INSERT INTO categories VALUES(?,?)",(item['name'],item['desc']))
-        cur.execute("INSERT INTO transactions VALUES(?,?,?,?,?)",(item['item #'],item['amount'],item['category'],item['date'],item['description']))
+        cur.execute("INSERT INTO transactions VALUES(?,?,?,?)",(item['amount'],item['category'],item['date'],item['description']))
         con.commit()
         cur.execute("SELECT last_insert_rowid()")
         last_rowid = cur.fetchone()
@@ -59,22 +71,17 @@ class Transaction():
         con.close()
         return last_rowid[0]
 
-    # Jimkelly
-    def delete_transaction(self,tranID):
+    # Jimkelly Done
+    def delete_transaction(self,rowid):
 
-        # go to the sql table based on the transaction ID 
-        # find transID and remove ot from the SQL table 
        
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("DELETE FROM transactions WHERE 'item #'=(?)",(tranID,))
+        cur.execute('''DELETE FROM transactions
+                       WHERE rowid=(?);
+        ''',(rowid,))
         con.commit()
         con.close()
-        #cur.execute('''DELETE FROM categories WHERE rowid=(?); ''',(rowid,))
-        
-
-        # this things in the parenthesis is the actual sql code that deletes the transaction based on the ID
-        # the code should go into the data base and based on the trans ID delete the whole row( each row is one transaction)
         
 
     # Nazari
@@ -96,17 +103,15 @@ class Transaction():
     def summarize_transaction_by_month(self):
         return
 
-    # Jimkelly
-    def summererise_transaction_by_year(self,yearID):
+    # Jimkelly Done
+    def summererise_transaction_by_year(self):
 
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT * from transactions GROUP BY date")
-        # cur.execute('''SELECT
-        #             date AS date,
-        #             EXTRACT(date FROM transaction_date) AS Date,
-        #             SUM(money) OVER(PARTITION BY EXTRACT(year FROM transaction_date)) AS money_earned
-        #             FROM data''')
+
+        #cur.execute("SELECT * from transactions GROUP BY CAST(strftime('%y', date) AS INTEGER)")
+        cur.execute("SELECT * FROM transactions ORDER BY substring(date,0,4)")
+
         rows = cur.fetchall()
         con.commit()
         con.close()
