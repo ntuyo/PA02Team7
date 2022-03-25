@@ -85,5 +85,31 @@ def gabbys_tests():
     return
 
 @pytest.mark.tiffany
-def tiffanys_tests():
-    return
+def tiffanys_tests(mydat_db):
+    #test_show_trans_case
+    trans1 = {'item #':'1',
+            'amount':'700',
+            'category':'loan',
+            'date':'2022-01-30',
+            'description':'loan for car'     
+            }
+    rowid1 = med_db.add_transaction(trans1)
+
+    trans2 = {'item #':'2',
+            'amount':'400',
+            'category':'loan',
+            'date':'2020-01-30',
+            'description':'loan for car'     
+            }
+    rowid2 = med_db.add_transaction(trans2)
+
+    trans3 = {'item #':'3',
+            'amount':'600',
+            'category':'loan',
+            'date':'2021-01-30',
+            'description':'loan for car'     
+            }
+    rowid3 = med_db.add_transaction(trans3)
+    trans3 = mydat_db.select_all()
+
+    assert len(trans3) == 3

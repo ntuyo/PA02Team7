@@ -4,7 +4,7 @@ import sqlite3
 
 def to_transaction_dict(trans_tuple):
     ''' transaction is a transaction tuple ('item #','amount','category','date','description')'''
-    transaction = {'item #':trans_tuple[0], 'amount':trans_tuple[1], 'category':trans_tuple[2], 'date':trans_tuple[3], 'description':trans_tuple[4]}
+    transaction = {'item #':trans_tuple[1], 'amount':trans_tuple[2], 'category':trans_tuple[3], 'date':trans_tuple[4], 'description':trans_tuple[5]}
     return transaction
 
 def to_transaction_dict_list(trans_tuples):
@@ -52,8 +52,17 @@ class Transaction():
 
     # Tiffany
     def show_transaction(self):
-        
         return
+
+    # Jimkelly
+    def select_all(self):
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT rowid,* from transactions")
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(tuples)
 
     # Gabby
     def add_transaction(self,item):
@@ -128,7 +137,3 @@ class Transaction():
         con.commit()
         con.close()
         return to_transaction_dict_list(rows)
-
-    # Tiffany
-    def print_this_menu(self):
-        return
