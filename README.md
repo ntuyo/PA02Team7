@@ -36,3 +36,46 @@ collected 7 items / 6 deselected / 1 selected
 test_transaction.py::test_tiffanys_tests PASSED                                                                  [100%]
 
 =========================================== 1 passed, 6 deselected in 0.47s ===========================================
+
+(base) PS C:\Users\tiffh\PA02Team7\pa02> python tracker.py
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 4
+no items to print
+> 5
+ transaction amount: 400
+ transaction category: loans
+ transaction date: 2012-11-14
+category description: mon for car
+> 4
+
+
+item #     amount     category   date       description
+----------------------------------------
+1          400        loans      2012-11-14 mon for car
+> 11
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
