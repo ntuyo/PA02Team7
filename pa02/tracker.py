@@ -80,16 +80,9 @@ def process_choice(choice):
         category.update(rowid,cat)
 
     elif choice == '4':
-<<<<<<< Updated upstream
-        #print('')
-        #print(transactions.show_transaction())
-        trans = transactions.transaction_select_all()
-        print_transactions(trans)
-=======
         trans = transactions.select_all()
         print_transactions(trans)
 
->>>>>>> Stashed changes
     elif choice == '5':
         #itemnum = int(input(" transaction item number: "))
         amount = input(" transaction amount: ")

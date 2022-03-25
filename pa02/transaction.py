@@ -51,8 +51,14 @@ class Transaction():
         return
 
     # Tiffany
-    def show_transaction(self):
-        return
+    def select_all(self):
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT rowid,* from transactions")
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(tuples)
 
     # Jimkelly
     def select_all(self):
