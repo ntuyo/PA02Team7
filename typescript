@@ -1,0 +1,122 @@
+Script started on Fri Mar 25 08:40:46 2022
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp PA02Team7 % [K[?2004hccd pa02[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004hppylinr t   t tracker.pt y[?2004l
+************* Module tracker
+tracker.py:29:61: C0303: Trailing whitespace (trailing-whitespace)
+tracker.py:95:0: C0303: Trailing whitespace (trailing-whitespace)
+tracker.py:121:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+tracker.py:148:37: C0303: Trailing whitespace (trailing-whitespace)
+tracker.py:164:0: C0305: Trailing newlines (trailing-newlines)
+tracker.py:44:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+tracker.py:62:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:64:4: R1705: Unnecessary "elif" after "return" (no-else-return)
+tracker.py:62:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+tracker.py:62:0: R0912: Too many branches (13/12) (too-many-branches)
+tracker.py:127:4: W0105: String statement has no effect (pointless-string-statement)
+tracker.py:144:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:149:14: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:151:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:152:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:154:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:155:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:37:0: W0611: Unused import sys (unused-import)
+tracker.py:37:0: C0411: standard import "import sys" should be placed before "from category import Category" (wrong-import-order)
+
+------------------------------------------------------------------
+Your code has been rated at 7.65/10 (previous run: 7.65/10, +0.00)
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004hppylint transaction.py[?2004l
+************* Module transaction
+transaction.py:7:0: C0301: Line too long (148/100) (line-too-long)
+transaction.py:18:62: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:55:0: C0301: Line too long (130/100) (line-too-long)
+transaction.py:73:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:89:0: C0301: Line too long (102/100) (line-too-long)
+transaction.py:101:0: C0301: Line too long (103/100) (line-too-long)
+transaction.py:108:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:109:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:123:0: C0304: Final newline missing (missing-final-newline)
+transaction.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+transaction.py:14:0: C0115: Missing class docstring (missing-class-docstring)
+transaction.py:64:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:76:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:86:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:96:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:112:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:122:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:122:4: R0201: Method could be a function (no-self-use)
+
+------------------------------------------------------------------
+Your code has been rated at 7.75/10 (previous run: 7.75/10, +0.00)
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004hppytest -v[?2004l
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.9.5, pytest-7.1.0, pluggy-1.0.0 -- /Users/jimkellypercine/opt/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/jimkellypercine/Desktop/PA02Team7/pa02, configfile: pytest.ini
+[1mcollecting ... [0m[1mcollected 7 items                                                              [0m
+
+test_category.py::test_to_cat_dict [32mPASSED[0m[32m                                [ 14%][0m
+test_category.py::test_add0 [32mPASSED[0m[32m                                       [ 28%][0m
+test_category.py::test_add [32mPASSED[0m[32m                                        [ 42%][0m
+test_category.py::test_delete [32mPASSED[0m[32m                                     [ 57%][0m
+test_category.py::test_update [32mPASSED[0m[32m                                     [ 71%][0m
+test_transaction.py::test_jimkellys_tests [32mPASSED[0m[32m                         [ 85%][0m
+test_transaction.py::test_jimkellys_tests2 [32mPASSED[0m[32m                        [100%][0m
+
+[32m============================== [32m[1m7 passed[0m[32m in 0.19s[0m[32m ===============================[0m
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004httracker     t  ppython 3 tracker.py[?2004l
+python: can't open file '/Users/jimkellypercine/Desktop/PA02Team7/pa02/3': [Errno 2] No such file or directory
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004httracker.py[?2004l
+zsh: command not found: tracker.py
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004hppyh thon tracker.py[?2004l
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 4
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+3          500        loan       2022-11-12 payment                       
+4          600        loan       2023-11-12 payment                       
+> 6
+TransID to be deleted: 3
+deletion Sucessfull
+> 4
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+4          600        loan       2023-11-12 payment                       
+> 9
+summarize transactions by year
+[{'item #': 4, 'amount': 600, 'category': 'loan', 'date': '2023-11-12', 'description': 'payment'}]
+> ^CTraceback (most recent call last):
+  File "/Users/jimkellypercine/Desktop/PA02Team7/pa02/tracker.py", line 163, in <module>
+    toplevel()
+  File "/Users/jimkellypercine/Desktop/PA02Team7/pa02/tracker.py", line 131, in toplevel
+    choice = process_choice(choice)
+  File "/Users/jimkellypercine/Desktop/PA02Team7/pa02/tracker.py", line 120, in process_choice
+    choice = input("> ")
+KeyboardInterrupt
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://jimkellys-mbp.dyn.brandeis.edu/Users/jimkellypercine/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) jimkellypercine@jimkellys-mbp pa02 % [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Fri Mar 25 08:44:06 2022

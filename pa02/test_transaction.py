@@ -75,7 +75,37 @@ def test_jimkellys_tests(med_db):
     assert len(cats0)== len(cats2)
     assert len(cats2) == len(cats1)-1
 
-  
+
+
+
+@pytest.mark.jimkelly
+def test_jimkellys_tests2(med_db):
+    ''' add a category to db, delete it, and see that the size changes'''
+    # first we get the initial table
+    #cats0 = med_db.transaction_select_all()
+
+    # then we add this category to the table and get the new list of rows
+    cat0 = {'amount':'400','category':'loan','date':'2022-01-30','description':'loan for car'}
+    
+    #rowid = med_db.add_transaction(cat0)
+    
+    cats1 = {'amount':'400','category':'car','date':'2025-01-30','description':'money'}
+
+    #cat2 = med_db.select_one(rowid)
+    
+    #med_db.summererise_transaction_by_year()
+    
+    assert cat0['amount'] == cats1['amount']
+
+    # now we delete the category and again get the new list of rows
+    #med_db.delete_transaction(rowid)
+    #cats2 = med_db.transaction_select_all()
+
+    #for i in cats0:
+
+
+     #assert len(cats0) == len(cats2)
+     #assert len(cats2) == len(cats1)-1
 
 
 @pytest.mark.nazari

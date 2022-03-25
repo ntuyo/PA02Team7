@@ -33,6 +33,17 @@ class Transaction():
         con.close()
         return to_transaction_dict_list(tuples)
 
+
+    def select_one(self,rowid):
+        ''' return a transaction with a specified rowid '''
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT rowid,* from transactions where rowid=(?)",(rowid,) )
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(tuples[0])
+
     # Gabby
     def add_transaction(self,item):
         ''' add a transaction to the transaction table.
