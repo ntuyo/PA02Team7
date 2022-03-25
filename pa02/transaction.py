@@ -15,7 +15,6 @@ class Transaction():
     def __init__(self,dbfile):
         con = sqlite3.connect(dbfile)
         cur = con.cursor()
-
         cur.execute('''CREATE TABLE IF NOT EXISTS transactions 
                     (amount int, category text, date Date, description text)''')
 
@@ -89,11 +88,6 @@ class Transaction():
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
         cur.execute("SELECT * from transactions GROUP BY date")
-        # cur.execute('''SELECT
-        #             date AS date,
-        #             EXTRACT(date FROM transaction_date) AS Date,
-        #             SUM(money) OVER(PARTITION BY EXTRACT(year FROM transaction_date)) AS money_earned
-        #             FROM data''')
         rows = cur.fetchall()
         con.commit()
         con.close()
@@ -101,7 +95,13 @@ class Transaction():
 
     # Gabby
     def summarize_transaction_by_month(self):
-        return
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT * from transactions CAST(strftime('%m', date) AS INTEGER)")
+        rows = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(rows)
 
     # Jimkelly Done
     def summererise_transaction_by_year(self):
