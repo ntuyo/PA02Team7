@@ -1,0 +1,125 @@
+Script started on Fri Mar 25 08:32:07 2022
+[1m[7m%[27m[1m[0m                                                                                ]7;file://gabrielles-mbp.dyn.brandeis.edu/Users/gabriellepile/Desktop/PA02Team7[0m[27m[24m[J(base) gabriellepile@gabrielles-mbp PA02Team7 % [K[?2004hccd pa02[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://gabrielles-mbp.dyn.brandeis.edu/Users/gabriellepile/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) gabriellepile@gabrielles-mbp pa02 % [K[?2004hppylink t     p  cd pa02..  ls   cd Dekstop[10Dpylint pa02[11Dls         [9Dcdlspylint pa02[11Dcd Dekstop [10Dls        [8Dcd ..pa02       ppylink t tracker.py[?2004l
+************* Module tracker
+tracker.py:21:61: C0303: Trailing whitespace (trailing-whitespace)
+tracker.py:114:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+tracker.py:141:37: C0303: Trailing whitespace (trailing-whitespace)
+tracker.py:156:0: C0304: Final newline missing (missing-final-newline)
+tracker.py:35:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+tracker.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:55:4: R1705: Unnecessary "elif" after "return" (no-else-return)
+tracker.py:98:8: E0602: Undefined variable 'pprint_transactions' (undefined-variable)
+tracker.py:53:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+tracker.py:53:0: R0912: Too many branches (13/12) (too-many-branches)
+tracker.py:120:4: W0105: String statement has no effect (pointless-string-statement)
+tracker.py:137:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:142:14: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:144:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:145:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:147:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:148:10: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)
+tracker.py:28:0: W0611: Unused import sys (unused-import)
+tracker.py:28:0: C0411: standard import "import sys" should be placed before "from category import Category" (wrong-import-order)
+
+------------------------------------------------------------------
+Your code has been rated at 7.16/10 (previous run: 7.16/10, +0.00)
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://gabrielles-mbp.dyn.brandeis.edu/Users/gabriellepile/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) gabriellepile@gabrielles-mbp pa02 % [K[?2004hppylink t transaction.py[?2004l
+************* Module transaction
+transaction.py:7:0: C0301: Line too long (148/100) (line-too-long)
+transaction.py:18:62: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:44:0: C0301: Line too long (130/100) (line-too-long)
+transaction.py:62:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:81:0: C0301: Line too long (103/100) (line-too-long)
+transaction.py:93:0: C0301: Line too long (103/100) (line-too-long)
+transaction.py:100:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:101:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+transaction.py:14:0: C0115: Missing class docstring (missing-class-docstring)
+transaction.py:53:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:67:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:77:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:88:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:106:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:116:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:116:4: R0201: Method could be a function (no-self-use)
+
+------------------------------------------------------------------
+Your code has been rated at 7.64/10 (previous run: 7.64/10, +0.00)
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://gabrielles-mbp.dyn.brandeis.edu/Users/gabriellepile/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) gabriellepile@gabrielles-mbp pa02 % [K[?2004hccdc  ppytest -v[?2004l
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.9.5, pytest-7.1.1, pluggy-1.0.0 -- /Users/gabriellepile/opt/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/gabriellepile/Desktop/PA02Team7/pa02, configfile: pytest.ini
+[1mcollecting ... [0m[1mcollected 7 items                                                              [0m
+
+test_category.py::test_to_cat_dict [32mPASSED[0m[32m                                [ 14%][0m
+test_category.py::test_add0 [32mPASSED[0m[32m                                       [ 28%][0m
+test_category.py::test_add [32mPASSED[0m[32m                                        [ 42%][0m
+test_category.py::test_delete [32mPASSED[0m[32m                                     [ 57%][0m
+test_category.py::test_update [32mPASSED[0m[32m                                     [ 71%][0m
+test_transaction.py::test_gabby_add [32mPASSED[0m[32m                               [ 85%][0m
+test_transaction.py::test_gabby_summarize_by_month [32mPASSED[0m[32m                [100%][0m
+
+[32m============================== [32m[1m7 passed[0m[32m in 0.08s[0m[32m ===============================[0m
+[1m[7m%[27m[1m[0m                                                                                ]7;file://gabrielles-mbp.dyn.brandeis.edu/Users/gabriellepile/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) gabriellepile@gabrielles-mbp pa02 % [K[?2004ht ppython3 tracker.py[?2004l
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 5
+ transaction amount: 400
+ transaction category: Gabby live  kes food
+ transaction date: 2020-10-02
+category description: a loan for my company gabby likes food
+> 5
+ transaction amount: 600
+ transaction category: gift
+ transaction date: 2020-040 -02
+category description: a  a nother l         gift from my mom
+> 7
+summarizing by date
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+2          600        gift       2020-04-02 a gift from my mom            
+1          400        Gabby likes food 2020-10-02 a loan for my company gabby likes food
+> 8
+summarizing by month
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+2          600        gift       2020-04-02 a gift from my mom            
+1          400        Gabby likes food 2020-10-02 a loan for my company gabby likes food
+> exit
+choice exit not yet implemented
+> ^CTraceback (most recent call last):
+  File "/Users/gabriellepile/Desktop/PA02Team7/pa02/tracker.py", line 156, in <module>
+    toplevel()
+  File "/Users/gabriellepile/Desktop/PA02Team7/pa02/tracker.py", line 124, in toplevel
+    choice = process_choice(choice)
+  File "/Users/gabriellepile/Desktop/PA02Team7/pa02/tracker.py", line 113, in process_choice
+    choice = input("> ")
+KeyboardInterrupt
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://gabrielles-mbp.dyn.brandeis.edu/Users/gabriellepile/Desktop/PA02Team7/pa02[0m[27m[24m[J(base) gabriellepile@gabrielles-mbp pa02 % [K[?2004heexit[?2004l
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Fri Mar 25 08:36:14 2022
