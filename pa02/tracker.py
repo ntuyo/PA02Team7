@@ -2,42 +2,33 @@
 '''
 tracker is an app that maintains a list of personal
 financial transactions.
-
 It uses Object Relational Mappings (ORM)
 to abstract out the database operations from the
 UI/UX code.
-
 The ORM, Category, will map SQL rows with the schema
   (rowid, category, description)
 to Python Dictionaries as follows:
-
 (5,'rent','monthly rent payments') <-->
-
 {rowid:5,
  category:'rent',
  description:'monthly rent payments'
  }
-
 Likewise, the ORM, Transaction will mirror the database with
 columns:
 amount, category, date (yyyymmdd), description
-
 In place of SQL queries, we will have method calls.
-
 This app will store the data in a SQLite database ~/tracker.db
-
 Note the actual implementation of the ORM is hidden and so it 
 could be replaced with PostgreSQL or Pandas or straight python lists
-
 '''
 
 #from transactions import Transaction
 from category import Category
+from transaction import Transaction
 import sys
 
-#transactions = Transaction('tracker.db')
+transactions = Transaction('tracker.db')
 category = Category('tracker.db')
-
 
 # here is the menu for the tracker app
 
@@ -78,6 +69,44 @@ def process_choice(choice):
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
+    elif choice == '4':
+        trans = transactions.transaction_select_all()
+        print_transactions(trans)
+    elif choice == '5':
+        #itemnum = int(input(" transaction item number: "))
+        amount = input(" transaction amount: ")
+        trancat = input(" transaction category: ")
+        date = input(" transaction date: ")
+        trandesc = input("category description: ")
+        transaction = {'amount':amount, 'category':trancat, 'date':date, 'description':trandesc}
+        transactions.add_transaction(transaction)
+    elif choice=='6':
+        deleted = int(input("TransID to be deleted: "))
+        transactions.delete_transaction(deleted)
+        print("deletion Sucessfull")
+    ###################
+    # Nazari's Method #
+    ###################
+    elif choice == '7':
+        print('summarizing by date')
+        print_transactions(transactions.summarize_transaction_by_date())
+    elif choice == '8':
+        print('summarizing by month')
+        print_transactions(transactions.summarize_transaction_by_month())
+    elif choice=='9':
+        print("summarize transactions by year")
+        pprint_transactions(transactions.summererise_transaction_by_year())
+    ###################
+    # Nazari's Method #
+    ###################
+    elif choice == '10':
+        print('summarizing by category')
+        print_transactions(transactions.summarize_transaction_by_category())
+    elif choice == '11':
+        print('summarizing by date')
+        print_transactions(transactions.print_this_menu())
+
+
     else:
         print("choice",choice,"not yet implemented")
 
@@ -105,15 +134,15 @@ def print_transactions(items):
         print('no items to print')
         return
     print('\n')
-    print("%-10s %-10d %-10s %-10d %-30s"%(
+    print("%-10s %-10s %-10s %-10s %-30s"%(
         'item #','amount','category','date','description'))
     print('-'*40)
     for item in items:
         values = tuple(item.values()) 
-        print("%-10s %-10d %-10s %-10d %-30s"%values)
+        print("%-10s %-10s %-10s %-10s %-30s"%values)
 
 def print_category(cat):
-    print("%-3d %-10s %-30s"%(cat['rowid'],cat['name'],cat['desc']))
+    print("%-3s %-10s %-30s"%(cat['rowid'],cat['name'],cat['desc']))
 
 def print_categories(cats):
     print("%-3s %-10s %-30s"%("id","name","description"))
@@ -125,4 +154,3 @@ def print_categories(cats):
 # here is the main call!
 
 toplevel()
-
