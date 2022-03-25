@@ -78,10 +78,7 @@ def process_choice(choice):
         desc = input("new category description: ")
         cat = {'name':name, 'desc':desc}
         category.update(rowid,cat)
-
     elif choice == '4':
-        #print('')
-        #print(transactions.show_transaction())
         trans = transactions.transaction_select_all()
         print_transactions(trans)
     elif choice == '5':
@@ -92,26 +89,31 @@ def process_choice(choice):
         trandesc = input("category description: ")
         transaction = {'amount':amount, 'category':trancat, 'date':date, 'description':trandesc}
         transactions.add_transaction(transaction)
-   
     elif choice=='6':
         deleted = int(input("TransID to be deleted: "))
         transactions.delete_transaction(deleted)
         print("deletion Sucessfull")
+    ###################
+    # Nazari's Method #
+    ###################
     elif choice == '7':
         print('summarizing by date')
-        print(transactions.summarize_transaction_by_date())
+        print_transactions(transactions.summarize_transaction_by_date())
     elif choice == '8':
-        print('summarizing by date')
-        print(transactions.summarize_transaction_by_month())
+        print('summarizing by month')
+        print_transactions(transactions.summarize_transaction_by_month())
     elif choice=='9':
         print("summarize transactions by year")
-        print(transactions.summererise_transaction_by_year())
+        pprint_transactions(transactions.summererise_transaction_by_year())
+    ###################
+    # Nazari's Method #
+    ###################
     elif choice == '10':
-        print('summarizing by date')
-        print(transactions.summarize_transaction_by_category())
+        print('summarizing by category')
+        print_transactions(transactions.summarize_transaction_by_category())
     elif choice == '11':
         print('summarizing by date')
-        print(transactions.print_this_menu())
+        print_transactions(transactions.print_this_menu())
 
 
     else:

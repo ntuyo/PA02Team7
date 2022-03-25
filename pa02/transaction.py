@@ -61,7 +61,9 @@ class Transaction():
         con.close()
         
 
-    # Nazari
+    ###################
+    # Nazari's Method #
+    ###################
     def summarize_transaction_by_date(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
@@ -97,11 +99,13 @@ class Transaction():
         
     
 
-    # Nazari
+     ###################
+    # Nazari's Method #
+    ###################
     def summarize_transaction_by_category(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT rowid,* from transactions group by category")
+        cur.execute("SELECT rowid,* from transactions order by category")
         rows = cur.fetchall()
         con.commit()
         con.close()

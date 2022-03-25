@@ -1,0 +1,190 @@
+Script started on Fri Mar 25 04:37:07 2022
+Restored session: Fri Mar 25 04:36:58 EDT 2022
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro PA02Team7 % [K[?2004hexitpylint .[8Dexit    python -m pytest -v -m nazari[12D            [13D[9Dtracker.py[17Dcd pa02          [10Dexit   cd pa02[?2004l
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro pa02 % [K[?2004hcd pa02exit   pylint .[8Dexit    pylint .[?2004l
+[0m[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro pa02 % [K[?2004hpylint .[8Dcd pa02 exit   pylint .[8Dexit    python -m pytest -v -m nazari[12D            [13D[9Dtracker.py[17Dcd pa02          [10Dexit   python -m pytest[13Dest[2Cv -m nazari[17Dlin[2C.           [11Dthon tracker.py[17Dcd pa02          [10Dexit   pylint .-Ethon tracker.py[15Dlint -E        [8D.      p  ccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro PA02Team7 % [K[?2004hccd p c  cd ..pylint . pa02[1m/[0m[0m [?2004l
+************* Module pa02.test_transaction
+pa02/test_transaction.py:7:0: E0401: Unable to import 'transaction' (import-error)
+pa02/test_transaction.py:15:13: W0621: Redefining name 'dbfile' from outer scope (line 10) (redefined-outer-name)
+pa02/test_transaction.py:17:4: C0103: Variable name "db" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_transaction.py:21:13: W0621: Redefining name 'empty_db' from outer scope (line 15) (redefined-outer-name)
+pa02/test_transaction.py:35:11: W0621: Redefining name 'small_db' from outer scope (line 21) (redefined-outer-name)
+pa02/test_transaction.py:40:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_transaction.py:55:30: W0621: Redefining name 'small_db' from outer scope (line 21) (redefined-outer-name)
+pa02/test_transaction.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/test_transaction.py:58:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_transaction.py:72:34: W0621: Redefining name 'small_db' from outer scope (line 21) (redefined-outer-name)
+pa02/test_transaction.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/test_transaction.py:75:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_transaction.py:83:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_transaction.py:5:0: W0611: Unused small imported from cgitb (unused-import)
+pa02/test_transaction.py:7:0: W0611: Unused to_transaction_dict imported from transaction (unused-import)
+************* Module pa02.transaction
+pa02/transaction.py:7:0: C0301: Line too long (148/100) (line-too-long)
+pa02/transaction.py:18:62: C0303: Trailing whitespace (trailing-whitespace)
+pa02/transaction.py:44:0: C0301: Line too long (130/100) (line-too-long)
+pa02/transaction.py:62:0: C0303: Trailing whitespace (trailing-whitespace)
+pa02/transaction.py:78:0: C0301: Line too long (102/100) (line-too-long)
+pa02/transaction.py:90:0: C0301: Line too long (103/100) (line-too-long)
+pa02/transaction.py:97:0: C0303: Trailing whitespace (trailing-whitespace)
+pa02/transaction.py:98:0: C0303: Trailing whitespace (trailing-whitespace)
+pa02/transaction.py:112:0: C0304: Final newline missing (missing-final-newline)
+pa02/transaction.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pa02/transaction.py:14:0: C0115: Missing class docstring (missing-class-docstring)
+pa02/transaction.py:53:4: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/transaction.py:65:4: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/transaction.py:75:4: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/transaction.py:85:4: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/transaction.py:101:4: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/transaction.py:111:4: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/transaction.py:111:4: R0201: Method could be a function (no-self-use)
+************* Module pa02.test_category
+pa02/test_category.py:67:49: C0303: Trailing whitespace (trailing-whitespace)
+pa02/test_category.py:68:48: C0303: Trailing whitespace (trailing-whitespace)
+pa02/test_category.py:7:0: E0401: Unable to import 'category' (import-error)
+pa02/test_category.py:15:13: W0621: Redefining name 'dbfile' from outer scope (line 10) (redefined-outer-name)
+pa02/test_category.py:17:4: C0103: Variable name "db" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_category.py:22:13: W0621: Redefining name 'empty_db' from outer scope (line 15) (redefined-outer-name)
+pa02/test_category.py:36:11: W0621: Redefining name 'small_db' from outer scope (line 22) (redefined-outer-name)
+pa02/test_category.py:41:8: C0103: Variable name "s" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_category.py:59:4: C0103: Variable name "a" doesn't conform to snake_case naming style (invalid-name)
+pa02/test_category.py:66:14: W0621: Redefining name 'small_db' from outer scope (line 22) (redefined-outer-name)
+pa02/test_category.py:74:13: W0621: Redefining name 'med_db' from outer scope (line 36) (redefined-outer-name)
+pa02/test_category.py:90:16: W0621: Redefining name 'med_db' from outer scope (line 36) (redefined-outer-name)
+pa02/test_category.py:110:16: W0621: Redefining name 'med_db' from outer scope (line 36) (redefined-outer-name)
+pa02/test_category.py:5:0: W0611: Unused small imported from cgitb (unused-import)
+************* Module pa02.tracker
+pa02/tracker.py:29:61: C0303: Trailing whitespace (trailing-whitespace)
+pa02/tracker.py:123:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+pa02/tracker.py:150:37: C0303: Trailing whitespace (trailing-whitespace)
+pa02/tracker.py:166:0: C0305: Trailing newlines (trailing-newlines)
+pa02/tracker.py:35:0: E0401: Unable to import 'category' (import-error)
+pa02/tracker.py:36:0: E0401: Unable to import 'transaction' (import-error)
+pa02/tracker.py:44:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+pa02/tracker.py:62:0: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/tracker.py:64:4: R1705: Unnecessary "elif" after "return" (no-else-return)
+pa02/tracker.py:107:8: E0602: Undefined variable 'pprint_transactions' (undefined-variable)
+pa02/tracker.py:62:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+pa02/tracker.py:62:0: R0912: Too many branches (13/12) (too-many-branches)
+pa02/tracker.py:129:4: W0105: String statement has no effect (pointless-string-statement)
+pa02/tracker.py:153:0: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/tracker.py:156:0: C0116: Missing function or method docstring (missing-function-docstring)
+pa02/tracker.py:37:0: W0611: Unused import sys (unused-import)
+pa02/tracker.py:37:0: C0411: standard import "import sys" should be placed before "from category import Category" (wrong-import-order)
+************* Module pa02.category
+pa02/category.py:1:0: R0801: Similar lines in 2 files
+==pa02.test_category:8
+==pa02.test_transaction:8
+@pytest.fixture
+def dbfile(tmpdir):
+    ''' create a database file in a temporary file system '''
+    return tmpdir.join('test_tracker.db')
+
+@pytest.fixture
+def empty_db(dbfile):
+    ''' create an empty database ''' (duplicate-code)
+pa02/category.py:1:0: R0801: Similar lines in 2 files
+==pa02.category:61
+==pa02.transaction:44
+        con.commit()
+        cur.execute("SELECT last_insert_rowid()")
+        last_rowid = cur.fetchone()
+        con.commit()
+        con.close()
+        return last_rowid[0]
+ (duplicate-code)
+pa02/category.py:1:0: R0801: Similar lines in 2 files
+==pa02.test_category:34
+==pa02.test_transaction:33
+@pytest.fixture
+def med_db(small_db):
+    ''' create a database with 10 more elements than small_db'''
+    rowids=[]
+    # add 10 categories
+    for i in range(10):
+        s = str(i) (duplicate-code)
+
+-----------------------------------
+Your code has been rated at 7.36/10
+
+[0m[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro PA02Team7 % [K[?2004hpylint pa02[11Dcd ..      pylint .[8Dcd pa02 exit   pylint .[8Dexit    pylint .[8Dexit    cd pa02pylint .[8Dcd ..   pylint pa02[11D           [11Dpylint pa02[11Dcd ..      pylint .[8Dcd pa02 exit   pylint .[8Dexit    pylint .[8Dexit    cd pa02pylint .[8Dcd ..   pylint pa02[11D           [11De pylint pa02[11Dcd ..      pylint .[8Dcd pa02 exit   pylint .[8Dexit    python -m pytest -v -m nazari[12D            [13D -v -m nazari[12D            [13D[9Dtracker.py[17Dcd pa02          [10D[?2004l
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro pa02 % [K[?2004hcd pa02pylint pa02[11Dcd ..      pylint .[8Dcd pa02 exit   pylint .[8Dexit    python -m pytest -v -m nazari[12D            [13D[?2004l
+[1m======================================== test session starts ========================================[0m
+platform darwin -- Python 3.8.8, pytest-7.1.1, pluggy-0.13.1
+rootdir: /Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02, configfile: pytest.ini
+plugins: anyio-2.2.0
+[1mcollecting ... [0m[1mcollected 7 items                                                                                   [0m
+
+test_category.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                                        [ 71%][0m
+test_transaction.py [32m.[0m[32m.[0m[32m                                                                        [100%][0m
+
+[32m========================================= [32m[1m7 passed[0m[32m in 0.18s[0m[32m =========================================[0m
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro pa02 % [K[?2004hpython -m pytest[16Dcd pa02         [9Dpylint pa02[11Dcd ..      pylint .[8Dcd pa02 exit   pylint .[8Dexit    python -m pytest -v -m nazari[?2004l
+[1m======================================== test session starts ========================================[0m
+platform darwin -- Python 3.8.8, pytest-7.1.1, pluggy-0.13.1 -- /Users/nazarituyo/opt/anaconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02, configfile: pytest.ini
+plugins: anyio-2.2.0
+[1mcollecting ... [0m[1mcollected 7 items / 5 deselected / 2 selected                                                       [0m
+
+test_transaction.py::test_nazaris_summary_date [32mPASSED[0m[32m                                         [ 50%][0m
+test_transaction.py::test_nazaris_summary_category [32mPASSED[0m[32m                                     [100%][0m
+
+[32m================================== [32m[1m2 passed[0m, [33m5 deselected[0m[32m in 0.08s[0m[32m ==================================[0m
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro pa02 % [K[?2004hpython -m pytest -v -m nazari[12D            [13D[16Dcd pa02         [9Dpylint pa02[11Dcd ..      pylint .[8Dcd pa02 exit   pylint .[8Dexit    python -m pytest -v -m nazari[12D            [13D[9Dtracker.py[?2004l
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 4
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+1          32024      a          2021-03-21 tester a                      
+2          3893       a          2021-04-20 tester a 2                    
+3          3294       b          2021-05-21 7                             
+4          3294       b          2011-02-28 tester 3                      
+5          3943       apple      2012-04-18 testing again                 
+> 7
+summarizing by date
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+4          3294       b          2011-02-28 tester 3                      
+5          3943       apple      2012-04-18 testing again                 
+1          32024      a          2021-03-21 tester a                      
+2          3893       a          2021-04-20 tester a 2                    
+3          3294       b          2021-05-21 7                             
+> 10
+summarizing by category
+
+
+item #     amount     category   date       description                   
+----------------------------------------
+1          32024      a          2021-03-21 tester a                      
+2          3893       a          2021-04-20 tester a 2                    
+5          3943       apple      2012-04-18 testing again                 
+3          3294       b          2021-05-21 7                             
+4          3294       b          2011-02-28 tester 3                      
+> 0
+bye
+[1m[7m%[27m[1m[0m                                                                                                     ]7;file://Nazaris-Macbook-Pro.local/Users/nazarituyo/Desktop/Brandeis/GitHub/Team7PA02/PA02Team7/pa02[0m[27m[24m[J(base) nazarituyo@Nazaris-Macbook-Pro pa02 % [K[?2004heexit[?2004l
+
+Saving session...
+...saving history...truncating history files...
+...completed.
+
+Script done on Fri Mar 25 04:39:19 2022

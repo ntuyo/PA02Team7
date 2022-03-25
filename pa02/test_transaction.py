@@ -51,41 +51,46 @@ def med_db(small_db):
     for j in range(10):
         small_db.delete_transaction(rowids[j])
 
-
-
-@pytest.mark.jimkelly
-def test_jimkellys_tests(med_db):
-    ''' add a category to db, delete it, and see that the size changes'''
-    # first we get the initial table
-    cats0 = med_db.transaction_select_all()
-
-    # then we add this category to the table and get the new list of rows
-    cat0 = {'amount':'400',
-            'category':'loan',
-            'date':'2022-01-30',
-            'description':'loan for car'     
-            }
-    rowid = med_db.add_transaction(cat0)
-    cats1 = med_db.transaction_select_all()
-
-    # now we delete the category and again get the new list of rows
-    med_db.delete_transaction(rowid)
-    cats2 = med_db.transaction_select_all()
-
-    assert len(cats0)== len(cats2)
-    assert len(cats2) == len(cats1)-1
-
-  
-
+@pytest.mark.nazari
+def test_nazaris_summary_date(small_db):
+    rowids = []
+    for i in range(10):
+        s = str(i)
+        cat ={'amount':100+i,
+               'category':'categorya',
+               'date':'202'+s+'-01-01',
+                'description':'testing'}
+        rowid = small_db.add_transaction(cat)
+        rowids.append(rowid)
+    sorted_date = small_db.summarize_transaction_by_date()
+    trans1 = sorted_date[len(sorted_date)-1]
+    assert trans1['date'] == "2029-01-01"
+    trans2 = sorted_date[0]
+    assert trans2['date'] == "2020-01-01"
 
 @pytest.mark.nazari
-def nazaris_tests():
-    return
-
-@pytest.mark.gabby
-def gabbys_tests():
-    return
-
-@pytest.mark.tiffany
-def tiffanys_tests():
-    return
+def test_nazaris_summary_category(small_db):
+    rowids = []
+    for i in range(10):
+        s = str(i)
+        cat ={'amount':100+i,
+               'category':'category'+s,
+               'date':'2020-01-01',
+                'description':'testing'}
+        rowid = small_db.add_transaction(cat)
+        rowids.append(rowid)
+    for i in range(10):
+        s = str(i)
+        cat ={'amount':100+i,
+               'category':'category'+s,
+               'date':'2020-01-01',
+                'description':'testing'}
+        rowid = small_db.add_transaction(cat)
+        rowids.append(rowid)
+    sorted_date = small_db.summarize_transaction_by_category()
+    trans1 = sorted_date[len(sorted_date)-2]
+    assert trans1['category'] == "loan"
+    trans2 = sorted_date[0]
+    assert trans2['category'] == "bank"
+    trans3 = sorted_date[1]
+    assert trans3['category'] == "category0"
