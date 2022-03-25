@@ -4,7 +4,7 @@ import sqlite3
 
 def to_transaction_dict(trans_tuple):
     ''' transaction is a transaction tuple ('item #','amount','category','date','description')'''
-    transaction = {'item #':trans_tuple[1], 'amount':trans_tuple[2], 'category':trans_tuple[3], 'date':trans_tuple[4], 'description':trans_tuple[5]}
+    transaction = {'item #':trans_tuple[0], 'amount':trans_tuple[1], 'category':trans_tuple[2], 'date':trans_tuple[3], 'description':trans_tuple[4]}
     return transaction
 
 def to_transaction_dict_list(trans_tuples):
@@ -15,7 +15,6 @@ class Transaction():
     def __init__(self,dbfile):
         con = sqlite3.connect(dbfile)
         cur = con.cursor()
-
         cur.execute('''CREATE TABLE IF NOT EXISTS transactions 
                     (amount int, category text, date Date, description text)''')
 
@@ -34,41 +33,15 @@ class Transaction():
         con.close()
         return to_transaction_dict_list(tuples)
 
-    # Gabby
-    def quit(self):
-        return
-
-    #Jimkelly Done already
-    def show_categories(self):
-        return
-
-    # Tiffany
-    def add_category(self):
-        return
-
-    # Nazari
-    def modify_category(self):
-        return
-
-    # Tiffany
-    def select_all(self):
+    def select_one(self,rowid):
+        ''' return a category with a specified rowid '''
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT rowid,* from transactions")
+        cur.execute("SELECT rowid,* from transactions where rowid=(?)",(rowid,) )
         tuples = cur.fetchall()
         con.commit()
         con.close()
-        return to_transaction_dict_list(tuples)
-
-    # Jimkelly
-    def select_all(self):
-        con= sqlite3.connect(self.dbfile)
-        cur = con.cursor()
-        cur.execute("SELECT rowid,* from transactions")
-        tuples = cur.fetchall()
-        con.commit()
-        con.close()
-        return to_transaction_dict_list(tuples)
+        return to_transaction_dict(tuples[0])
 
     # Gabby
     def add_transaction(self,item):
@@ -89,7 +62,6 @@ class Transaction():
     # Jimkelly Done
     def delete_transaction(self,rowid):
 
-       
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
         cur.execute('''DELETE FROM transactions
@@ -103,12 +75,7 @@ class Transaction():
     def summarize_transaction_by_date(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT * from transactions GROUP BY date")
-        # cur.execute('''SELECT
-        #             date AS date,
-        #             EXTRACT(date FROM transaction_date) AS Date,
-        #             SUM(money) OVER(PARTITION BY EXTRACT(year FROM transaction_date)) AS money_earned
-        #             FROM data''')
+        cur.execute("SELECT rowid,* from transactions GROUP BY date")
         rows = cur.fetchall()
         con.commit()
         con.close()
@@ -116,7 +83,13 @@ class Transaction():
 
     # Gabby
     def summarize_transaction_by_month(self):
-        return
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute("SELECT rowid,* from transactions GROUP BY CAST(strftime('%m', date) AS INTEGER)")
+        rows = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_transaction_dict_list(rows)
 
     # Jimkelly Done
     def summererise_transaction_by_year(self):
@@ -124,8 +97,8 @@ class Transaction():
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
 
-        #cur.execute("SELECT * from transactions GROUP BY CAST(strftime('%y', date) AS INTEGER)")
-        cur.execute("SELECT * FROM transactions ORDER BY substring(date,0,4)")
+        #cur.execute("SELECT rowid,* from transactions GROUP BY CAST(strftime('%y', date) AS INTEGER)")
+        cur.execute("SELECT rowid,* FROM transactions ORDER BY substring(date,0,4)")
 
         rows = cur.fetchall()
         con.commit()
@@ -138,8 +111,12 @@ class Transaction():
     def summarize_transaction_by_category(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT 'item #',* from transactions groupby category")
+        cur.execute("SELECT rowid,* from transactions group by category")
         rows = cur.fetchall()
         con.commit()
         con.close()
         return to_transaction_dict_list(rows)
+
+    # Tiffany
+    def print_this_menu(self):
+        return
