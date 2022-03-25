@@ -34,27 +34,6 @@ class Transaction():
         return to_transaction_dict_list(tuples)
 
     # Gabby
-    def quit(self):
-        return
-
-    #Jimkelly Done already
-    def show_categories(self):
-        return
-
-    # Tiffany
-    def add_category(self):
-        return
-
-    # Nazari
-    def modify_category(self):
-        return
-
-    # Tiffany
-    def show_transaction(self):
-        
-        return
-
-    # Gabby
     def add_transaction(self,item):
         ''' add a transaction to the transaction table.
             this returns the rowid of the inserted element
@@ -73,7 +52,6 @@ class Transaction():
     # Jimkelly Done
     def delete_transaction(self,rowid):
 
-       
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
         cur.execute('''DELETE FROM transactions
@@ -87,7 +65,7 @@ class Transaction():
     def summarize_transaction_by_date(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT * from transactions GROUP BY date")
+        cur.execute("SELECT rowid,* from transactions GROUP BY date")
         rows = cur.fetchall()
         con.commit()
         con.close()
@@ -97,7 +75,7 @@ class Transaction():
     def summarize_transaction_by_month(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT * from transactions CAST(strftime('%m', date) AS INTEGER)")
+        cur.execute("SELECT rowid,* from transactions GROUP BY CAST(strftime('%m', date) AS INTEGER)")
         rows = cur.fetchall()
         con.commit()
         con.close()
@@ -109,8 +87,8 @@ class Transaction():
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
 
-        #cur.execute("SELECT * from transactions GROUP BY CAST(strftime('%y', date) AS INTEGER)")
-        cur.execute("SELECT * FROM transactions ORDER BY substring(date,0,4)")
+        #cur.execute("SELECT rowid,* from transactions GROUP BY CAST(strftime('%y', date) AS INTEGER)")
+        cur.execute("SELECT rowid,* FROM transactions ORDER BY substring(date,0,4)")
 
         rows = cur.fetchall()
         con.commit()
@@ -123,7 +101,7 @@ class Transaction():
     def summarize_transaction_by_category(self):
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
-        cur.execute("SELECT 'item #',* from transactions groupby category")
+        cur.execute("SELECT rowid,* from transactions group by category")
         rows = cur.fetchall()
         con.commit()
         con.close()
